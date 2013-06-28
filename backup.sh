@@ -7,7 +7,7 @@ BIN_DIR=${BIN_PATH%/*}
 
 function run_backup {
   . $BIN_DIR/dedup.sh "$BACKUP_DIR"
-  PASSPHRASE=$SYNC_PASS duplicity "$BACKUP_DIR.dedup" $SYNC_DST
+  PASSPHRASE=$SYNC_PASS duplicity --allow-source-mismatch "$BACKUP_DIR.dedup" $SYNC_DST
 }
 
 DOFILE=$SYNC_FILE
